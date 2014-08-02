@@ -152,6 +152,10 @@ ApplicationWindow{
         antialiasing: false
         opacity: shadersettings.windowOpacity * 0.3 + 0.7
 
+		function updateSource() { 
+			frame.source = shadersettings.frame_source;
+		}
+
         Loader{
             id: frame
             anchors.fill: parent

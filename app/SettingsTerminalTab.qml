@@ -120,7 +120,10 @@ Tab{
                     Layout.fillWidth: true
                     model: shadersettings.frames_list
                     currentIndex: shadersettings.frames_index
-                    onCurrentIndexChanged: shadersettings.frames_index = currentIndex
+                    onCurrentIndexChanged: {
+						shadersettings.frames_index = currentIndex;
+						shadersettings.updateFrameSource();
+					}
                 }
             }
         }

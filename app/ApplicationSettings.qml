@@ -42,6 +42,8 @@ Item{
 
     property real fps: 0
 
+	property bool allowBorder: true
+
     function mix(c1, c2, alpha){
         return Qt.rgba(c1.r * alpha + c2.r * (1-alpha),
                        c1.g * alpha + c2.g * (1-alpha),
@@ -145,9 +147,16 @@ Item{
     property bool _frameReflections: true
     property bool reflectionsAllowed: framelist.get(frames_index).reflections
     property bool frameReflections: _frameReflections && reflectionsAllowed
+    
+	property bool _frameBorder: true
 
     property alias profiles_list: profileslist
     property int profiles_index: 0
+
+	function updateFrameSource(){
+		frame_source = frames_list.get(frames_index).source
+		maincontainer.updateSource();
+	}
 
     // DB STORAGE /////////////////////////////////////////////////////////////
 
