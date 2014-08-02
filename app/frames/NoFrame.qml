@@ -19,4 +19,5 @@ TerminalFrame{
     displacementTop: 0
     displacementRight: 0
     displacementBottom: 0
+
 }
